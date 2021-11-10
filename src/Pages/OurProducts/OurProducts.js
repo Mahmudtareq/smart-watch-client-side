@@ -1,13 +1,35 @@
-import React from 'react';
+import { Container } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../Footer/Footer';
-import Products from '../Home/Products/Products';
+// import Products from '../Home/Products/Products';
+import Grid from '@mui/material/Grid';
+import OurProduct from '../OurProduct/OurProduct';
 
 const OurProducts = () => {
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        fetch('./products.json')
+            .then(res => res.json())
+            .then(data => setProducts(data));
+
+    }, [])
     return (
         <div>
             <Navigation></Navigation>
-            <Products></Products>
+            <Container sx={{my:15}}>
+                <Grid container spacing={2}>
+                    {
+                        products.map(product => <OurProduct
+                            key={product.img}
+                            product={product}
+                            >
+                        </OurProduct>)
+                        
+                  }
+                </Grid>
+                
+           </Container>
             <Footer></Footer>
         </div>
     );

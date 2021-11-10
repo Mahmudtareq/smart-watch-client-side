@@ -15,15 +15,15 @@ const Products = () => {
         
     },[])
     return (
-        <Container sx={{ my: 5 }}>
+        <Container sx={{ my: 15 }}>
             <Typography sx={{textAlign:'center',my:5,color:'info.main'}} variant="h5">
                 OUR BEST PRODUCTS
             </Typography>
-        <Grid container spacing={2}>
-            {
-                products.map(product => <Product
+           
+            <Grid container spacing={2}>
+                {
+                    products.slice(0,6).map(product => <Product
                     product={product}
-                
                 ></Product>)
             }
         
