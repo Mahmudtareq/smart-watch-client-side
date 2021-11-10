@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Powern",
+        "price": "$ 280.00",
+        "img": "https://i.ibb.co/rm8Ks1t/p1.jpg",
+        "description": "PowerWatch is equipped with a MATRIX-powered thermoelectric engine that is one-of-a-kind"
+    },
+    {
+        "name": "Tisson",
+        "price": "$ 280.00",
+        "img": "https://i.ibb.co/48t8Hjd/p2.jpg",
+        "description": "PowerWatch is equipped with a MATRIX-powered thermoelectric engine that is one-of-a-kind"
+    },
+    {
+        "name": "Tradltion",
+        "price": "$ 280.00",
+        "img": "https://i.ibb.co/RQgTFht/p3.jpg",
+        "description": "PowerWatch is equipped with a MATRIX-powered thermoelectric engine that is one-of-a-kind"
+    },
+    {
+        "name": "Calendar",
+        "price": "$ 480.00",
+        "img": "https://i.ibb.co/rm8Ks1t/p1.jpg",
+        "description": "PowerWatch is equipped with a MATRIX-powered thermoelectric engine that is one-of-a-kind"
+    },
+    {
+        "name": "Dream Swissmatic",
+        "price": "$ 380.00",
+        "img": "https://i.ibb.co/r6ndznH/p5.jpg",
+        "description": "PowerWatch is equipped with a MATRIX-powered thermoelectric engine that is one-of-a-kind"
+    },
+    {
+        "name": "Chronograph",
+        "price": "$ 290.00",
+        "img": "https://i.ibb.co/7pYbStC/p6.jpg",
+        "description": "PowerWatch is equipped with a MATRIX-powered thermoelectric engine that is one-of-a-kind"
+    },
+    {
+        "name": "PRX",
+        "price": "$ 250.00",
+        "img": "https://i.ibb.co/hfg1gtN/p7.jpg",
+        "description": "PowerWatch is equipped with a MATRIX-powered thermoelectric engine that is one-of-a-kind"
+    },
+    {
+        "name": "Sport Gent",
+        "price": "$ 150.00",
+        "img": "https://i.ibb.co/tchKJh4/p8.jpg",
+        "description": "PowerWatch is equipped with a MATRIX-powered thermoelectric engine that is one-of-a-kind"
+    },
+    {
+        "name": "Powermatic 80",
+        "price": "$ 280.00",
+        "img": "https://i.ibb.co/8mxkQqT/p9.jpg",
+        "description": "Is powermatic 80 worth it's comfortable and works well with the design of the watch"
+    },
+    {
+        "name": "Nograph",
+        "price": "$ 180.00",
+        "img": "https://i.ibb.co/Fbp18rm/10.jpg",
+        "description": "Men's Watch Business Nograph Big Face Brand Stylish Casual Metal Band Stainless Steel Analog Men's "
+    }
+]
