@@ -1,12 +1,12 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
-const OurProduct = ({product}) => {
-    console.log(product)
-    const { name, img, price, description ,_id} = product;
+const ManageProducts = ({ product, handleDelete }) => {
+    const { name, img, description, price, _id } = product;
+   
     return (
         <Grid Grid item xs={12} md={4} >
+
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     component="img"
@@ -18,22 +18,20 @@ const OurProduct = ({product}) => {
                         {name}
                     </Typography>
                     <Typography gutterBottom variant="h6" component="div">
-                        <span>$</span>{price}
+                        <span>$</span> {price}
                     </Typography>
                     <Typography sx={{textAlign:'start'}} variant="body2" color="text.secondary">
                         {description.slice(0,100)}
                     </Typography>
                 </CardContent>
-                <CardActions >
-                    <NavLink style={{textDecoration:'none'}} to={`/booking/${_id}`}>
-                        <Button sx={{ px: 12, mx: 2 }} variant="contained">Buy Now</Button>
-
-                    </NavLink>
-                </CardActions>
-
+               
+                <Typography style={{textAlign:'center'}}>
+                    <Button onClick={()=>handleDelete(_id)} sx={{px:5,mb:2}} variant="contained">Delete</Button>
+                </Typography>
+                
             </Card>
         </Grid >
     );
 };
 
-export default OurProduct;
+export default ManageProducts;

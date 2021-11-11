@@ -9,7 +9,7 @@ import OurProduct from '../OurProduct/OurProduct';
 const OurProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('./products.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setProducts(data));
 
@@ -21,7 +21,7 @@ const OurProducts = () => {
                 <Grid container spacing={2}>
                     {
                         products.map(product => <OurProduct
-                            key={product.img}
+                            key={product._id}
                             product={product}
                             >
                         </OurProduct>)
