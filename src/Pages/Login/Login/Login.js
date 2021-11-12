@@ -30,9 +30,9 @@ const Login = () => {
     }
 
     return (
+        <>
         <Container sx={{my:5}}>
             <Grid container spacing={2}>
-                
                 <Grid item sx={{ mt: 10}} xs={12} md={6}>
                     <Typography sx={{ color: 'info.main', mt: 6 ,textAlign:'center'}} variant="h6" gutterBottom>
                         LOGIN
@@ -77,7 +77,8 @@ const Login = () => {
                 <img src={login1 } width="100%"  alt="..."/>
             </Grid>
         </Grid>
-        </Container>
+            </Container>
+            </>
     );
 };
 

@@ -1,10 +1,11 @@
-import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 
 const ManageProducts = ({ product, handleDelete }) => {
     const { name, img, description, price, _id } = product;
    
     return (
+        <>
         <Grid Grid item xs={12} md={4} >
 
             <Card sx={{ maxWidth: 345 }}>
@@ -28,9 +29,9 @@ const ManageProducts = ({ product, handleDelete }) => {
                 <Typography style={{textAlign:'center'}}>
                     <Button onClick={()=>handleDelete(_id)} sx={{px:5,mb:2}} variant="contained">Delete</Button>
                 </Typography>
-                
             </Card>
         </Grid >
+        </>
     );
 };
 

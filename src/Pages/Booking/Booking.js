@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { useParams } from 'react-router';
 import Grid from '@mui/material/Grid';
+import Alert from '@mui/material/Alert';
 import Footer from '../Footer/Footer';
 import p4 from '../../images/products/p4.jpg';
 import p5 from '../../images/products/p5.jpg';
@@ -15,6 +16,8 @@ const Booking = () => {
     const { productId } = useParams();
     const [products, setProducts] = useState({});
     const [openBooking, setBookingOpen] = React.useState(false);
+    const [oderPlaceSuccess, setOrderPlaceSuccess] = useState(false);
+
     const handleBookingOpen = () => setBookingOpen(true);
     const handleBookingClose = () => setBookingOpen(false);
     useEffect(() => {
@@ -40,9 +43,9 @@ const Booking = () => {
                     </Typography>
                     <NavLink style={{textDecoration:'none'}} to="/home">
                         <Button sx={{mb:5,px:10}} variant="contained">Back To Home</Button>
-
                     </NavLink>
                 </Card>
+                  {oderPlaceSuccess && <Alert severity="success">Order Place Successfully !!! Thank You For Your Booking</Alert>}
 
 
             </Grid>
@@ -201,6 +204,7 @@ const Booking = () => {
                 products={products}
                 openBooking={openBooking}
                 handleBookingClose={handleBookingClose}
+                setOrderPlaceSuccess={setOrderPlaceSuccess}
             ></BookingModal>
         </>
        

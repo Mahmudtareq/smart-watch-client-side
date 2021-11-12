@@ -11,10 +11,9 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
-import AddProducts from './Pages/AddProducts/AddProducts';
 import Booking from './Pages/Booking/Booking';
 import ManageProduct from './Pages/ManageProduct/ManageProduct';
-
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 function App() {
   return (
     <div className ="App">
@@ -42,12 +41,9 @@ function App() {
         <PrivateRoute path="/booking/:productId">
          <Booking></Booking>
         </PrivateRoute>
-        <Route path="/addProducts">
-            <AddProducts></AddProducts>
-        </Route>
-        <Route path="/manageProduct">
-           <ManageProduct></ManageProduct>
-        </Route>
+        <PrivateRoute path="/dashboard">
+              <Dashboard></ Dashboard>
+        </PrivateRoute>
         </Switch>
       </Router>
       </AuthProvider>

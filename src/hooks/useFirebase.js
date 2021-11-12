@@ -8,6 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
+    const [admin, setAdmin] = useState(false);
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
@@ -15,10 +16,11 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-
                 setError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                // save user to database 
+                userSave(email, name,'POST');
                 updateProfile(auth.currentUser, {
                     displayName: name,
                 }).then(() => {
@@ -56,6 +58,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
+                userSave(user.email,user.displayName,'PUT');
                 setError('');
                 const destination = location?.state?.from || '/'
                 history.replace(destination);
@@ -79,7 +82,8 @@ const useFirebase = () => {
         });
         return () => unsubscribe;
         
-    },[auth])
+    }, [auth])
+    
 
     const logOut = () => {
         setIsLoading(true);
@@ -91,9 +95,29 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
         
     }
+    // send data to server
+    const userSave = (email, displayName,method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type' : 'application/json'
+                
+            },
+            body: JSON.stringify(user)
+            
+        })
+    }
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin));
+
+    }, [user.email])
 
     return {
         user,
+        admin,
         registerUser,
         logOut,
         loginUser,

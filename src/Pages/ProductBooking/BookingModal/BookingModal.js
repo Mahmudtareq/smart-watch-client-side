@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
-import { TextField ,Typography,Container} from '@mui/material';
+import { TextField ,Typography} from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
 
 const style = {
@@ -19,18 +19,50 @@ const style = {
     p: 4,
 };
 
-const BookingModal = ({ openBooking, handleBookingClose, products }) => {
-    // const { name ,price} = products;
-    const { user } = useAuth();
+const BookingModal = ({ openBooking, handleBookingClose, products, setOrderPlaceSuccess }) => {
+    const { name ,price} = products;
+    const { user, } = useAuth();
+    const orderInfo = {userName:user.displayName,email:user.email,quantity:'',phone:'',address:''};
+    const [bookingInfo, setBookingInfo] = useState(orderInfo);
+
+     const handleOnBlur = e =>{
+        const field = e.target.name;
+        const value = e.target.value;
+        const newInfo = {...bookingInfo};
+        newInfo[field] = value;
+        // console.log(newInfo);
+        setBookingInfo(newInfo);
+    }
     const handleBookingProducts = e => {
         alert('Producte submitted');
         // collect data 
+        const order={
+            ...bookingInfo,
+            ProductName : name,
+            ProductPrice : price
+        }
+        // console.log(order);
         // send data to the server
-        handleBookingClose();
+        fetch('http://localhost:5000/orders',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+
+            },
+            body:JSON.stringify(order)
+
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if (data.insertedId) {
+                setOrderPlaceSuccess(true);
+                
+            }
+                handleBookingClose();
+        })
+      
         e.preventDefault();
     }
-
-    
     return (
         <Modal
             aria-labelledby="spring-modal-title"
@@ -39,12 +71,10 @@ const BookingModal = ({ openBooking, handleBookingClose, products }) => {
             onClose={handleBookingClose}
             closeAfterTransition
             BackdropComponent={Backdrop}
-            BackdropProps={{
-                timeout: 500,
-            }}
+            BackdropProps={{timeout:500}}
         >
             <Fade in={openBooking}>
-                <Box sx={{textAlign:'center'}} sx={style}>
+                <Box  sx={style}>
                     <Typography sx={{textAlign:'center',my:2,color:'info.main'}} id="spring-modal-title" variant="h5" component="h2">
                       Shipping Address
                     </Typography>
@@ -53,32 +83,31 @@ const BookingModal = ({ openBooking, handleBookingClose, products }) => {
                             sx={{ width: '80%', m: 1 }}
                             id="outlined-size-small"
                             size="small"
-                              defaultValue={user.displayName}
+                            name="userName"
+                            defaultValue={user.displayName}
                            
                         />
                         <TextField
                             sx={{ width: '80%', m: 1 }}
                             id="outlined-size-small"
                             size="small"
-                            name="patientName"
-                            // onBlur={handleOnBlur}
-                              defaultValue={user.email}
-                          
+                            name="email"
+                            defaultValue={user.email}
                         />
                         <TextField
                             sx={{ width: '80%', m: 1 }}
                             id="outlined-size-small"
                             size="small"
-                            name="email"
-                            // onBlur={handleOnBlur}
-                             placeholder="Quentity"
+                            name="quantity"
+                            onBlur={handleOnBlur}
+                            placeholder="Quantity"
                         />
                         <TextField
                             sx={{ width: '80%', m: 1 }}
                             id="outlined-size-small"
                             size="small"
                             name="phone"
-                            // onBlur={handleOnBlur}
+                            onBlur={handleOnBlur}
                             placeholder="Phone Number"
                         />
                         <TextField
@@ -86,10 +115,11 @@ const BookingModal = ({ openBooking, handleBookingClose, products }) => {
                             id="outlined-multiline-static"
                             multiline
                             rows={3}
+                            name="address"
+                            onBlur={handleOnBlur}
                             placeholder="Your Address"
                         />
                             <Button sx={{px:5}} type="submit" variant="contained">Place Your Order</Button>
-                        
                     </form>
                 </Box>
             </Fade>

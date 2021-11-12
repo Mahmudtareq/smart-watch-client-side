@@ -27,6 +27,7 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Smart Watch
                     </Typography>
+                    <Box>
                     <NavLink style={{ textDecoration: "none", color: 'white'}} to="/home">
                         <Button color="inherit">Home</Button>
 
@@ -40,14 +41,21 @@ const Navigation = () => {
                     </NavLink>
                     {
                         user?.email ?
-                            <NavLink style={{ textDecoration: "none", color: 'white' }} to="/">
-                                <Button onClick={logOut} variant="outlined" color="error">{user.displayName}  Logout</Button>
+                        <Box>
+                             <NavLink style={{ textDecoration: "none", color: 'white' }} to="dashboard">
+                                <Button color="inherit"> Dashboard</Button>
                             </NavLink>
+                             <NavLink style={{ textDecoration: "none", color: 'white' }} to="/">
+                                <Button onClick={logOut}  color="inherit">Logout</Button>
+                            </NavLink>
+
+                        </Box>
                             :
                             <NavLink style={{ textDecoration: "none", color: 'white' }} to="/login">
                                 <Button color="inherit">Login</Button>
                             </NavLink>
                 }
+                </Box>
                     
                 </Toolbar>
             </AppBar>
