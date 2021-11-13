@@ -10,7 +10,7 @@ const Reviews = () => {
     const { user } = useAuth();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://pacific-harbor-22675.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added Review Successfully');
