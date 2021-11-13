@@ -1,26 +1,25 @@
-import { Alert, Container, Grid, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import ManageProducts from '../ManageProducts/ManageProducts';
 
 const ManageProduct = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://pacific-harbor-22675.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data));
 
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://pacific-harbor-22675.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
                 if (data.deletedCount > 0) {
-                    <Alert severity="success">SuccessFully Deleted !!</Alert>
+                    alert('SuccessFully Deleted !!')
                     const remaining = products.filter(product => product._id !== id);
                     setProducts(remaining);
                 }
@@ -28,9 +27,9 @@ const ManageProduct = () => {
             });
     }
     return (
-        <Container sx={{ my: 15 }}>
-            <Typography sx={{ textAlign: 'center', my: 5, color: 'info.main' }} variant="h5">
-                Manage All  PRODUCTS
+        <Container sx={{ my:5 }}>
+            <Typography sx={{ textAlign: 'center', my:4, color: 'info.main' }} variant="h5">
+                MANAGE ALL  PRODUCTS
             </Typography>
 
             <Grid container spacing={2}>

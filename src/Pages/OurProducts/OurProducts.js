@@ -2,14 +2,13 @@ import { Container } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../Footer/Footer';
-// import Products from '../Home/Products/Products';
-import Grid from '@mui/material/Grid';
+import { Grid, Typography} from '@mui/material';
 import OurProduct from '../OurProduct/OurProduct';
 
 const OurProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://pacific-harbor-22675.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data));
 
@@ -17,7 +16,10 @@ const OurProducts = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <Container sx={{my:15}}>
+            <Container sx={{ my: 15 }}>
+                <Typography sx={{my:5,color:'primary.main'}} variant="h5">
+                    ALL PRODUCTS ARE AVAILABLE HERE
+                </Typography>
                 <Grid container spacing={2}>
                     {
                         products.map(product => <OurProduct

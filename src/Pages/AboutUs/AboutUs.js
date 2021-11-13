@@ -9,6 +9,7 @@ import about3 from '../../images/about/about3.png';
 import about4 from '../../images/about/about4.png';
 import about5 from '../../images/about/about5.jpg';
 import bannerBg from '../../images/about/banner1.png';
+import Footer from '../Footer/Footer';
 // import Navbar from '../Navbar/Navbar';
 
 const aboutBg = {
@@ -24,15 +25,8 @@ const AboutUs = () => {
     return (
         <>
             <Navigation></Navigation>
-            
             <Box style={aboutBg}>
-
             </Box>
-            {/* <Navbar></Navbar> */}
-
-             
-           
-
             <Container sx={{my:5}}>
                 <Typography sx={{ mb: 4, color: "info.main" }}variant="h4" gutterBottom component="div">
                     Unique & Stylist Fashion
@@ -116,6 +110,7 @@ const AboutUs = () => {
                 </Grid>
 
             </Container>
+            <Footer></Footer>
            
        
         </>

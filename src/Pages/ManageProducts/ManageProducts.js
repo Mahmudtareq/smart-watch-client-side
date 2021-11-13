@@ -5,9 +5,8 @@ const ManageProducts = ({ product, handleDelete }) => {
     const { name, img, description, price, _id } = product;
    
     return (
-        <>
+    <>
         <Grid Grid item xs={12} md={4} >
-
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     component="img"
@@ -31,6 +30,7 @@ const ManageProducts = ({ product, handleDelete }) => {
                 </Typography>
             </Card>
         </Grid >
+            
         </>
     );
 };

@@ -1,19 +1,28 @@
-import React from 'react';
-import useAuth from '../../../hooks/useAuth';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+<Box className={navItemContainer}>
+    <NavLink style={{ textDecoration: "none", color: 'white' }} to="/home">
+        <Button color="inherit">Home</Button>
 
-const ManageAllOrders = () => {
-    return (
-        <div>
-            <h2>Manage All Orders for  admin part</h2>
-        </div>
-    );
-};
+    </NavLink>
+    <NavLink style={{ textDecoration: "none", color: 'white' }} to="/aboutUs">
+        <Button color="inherit">About Us</Button>
 
-export default ManageAllOrders;
+    </NavLink>
+    <NavLink style={{ textDecoration: "none", color: 'white' }} to="/ourProducts">
+        <Button color="inherit">Our Products</Button>
+    </NavLink>
+    {
+        user?.email ?
+            <Box>
+                <NavLink style={{ textDecoration: "none", color: 'white' }} to="dashboard">
+                    <Button color="inherit"> Dashboard</Button>
+                </NavLink>
+                <NavLink style={{ textDecoration: "none", color: 'white' }} to="/">
+                    <Button onClick={logOut} color="inherit">Logout</Button>
+                </NavLink>
+            </Box>
+            :
+            <NavLink style={{ textDecoration: "none", color: 'white' }} to="/login">
+                <Button color="inherit">Login</Button>
+            </NavLink>
+    }
+</Box>

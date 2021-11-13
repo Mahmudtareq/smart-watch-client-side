@@ -23,7 +23,6 @@ import ManageProduct from '../../ManageProduct/ManageProduct';
 import Reviews from '../Reviews/Reviews';
 import PayMent from '../PayMent/PayMent';
 import { Button, IconButton } from '@mui/material';
-
 const drawerWidth = 220;
 
 function Dashboard(props) {
@@ -40,7 +39,9 @@ function Dashboard(props) {
     <div>
       <Toolbar>
         <Typography sx={{color:'info.main'}} variant="h5">
-        Menu Bar
+          <NavLink style={{ textDecoration: "none" }} to="/home">
+            <Button  variant="contained">Back To Home</Button>
+          </NavLink>
       </Typography>
       </Toolbar>
       <Divider />

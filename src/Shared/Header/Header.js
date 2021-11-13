@@ -1,7 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import banner1 from '../../images/about/banner1.png';
 import './Header.css';
 
 const Header = () => {

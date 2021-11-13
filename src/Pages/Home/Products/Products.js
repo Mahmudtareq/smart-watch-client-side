@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Product from '../Product/Product';
 import { Container, Typography } from '@mui/material';
@@ -9,7 +7,7 @@ import { Container, Typography } from '@mui/material';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://pacific-harbor-22675.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data));
         

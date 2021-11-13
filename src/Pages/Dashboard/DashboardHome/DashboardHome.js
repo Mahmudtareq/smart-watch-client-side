@@ -1,9 +1,10 @@
 import React from 'react';
 
 const DashboardHome = () => {
+    
     return (
         <div>
-            <h2>Well Come To Dashboard</h2>
+            <h2>WELL COME TO YOUR DASHBOARD</h2>
         </div>
     );
 };

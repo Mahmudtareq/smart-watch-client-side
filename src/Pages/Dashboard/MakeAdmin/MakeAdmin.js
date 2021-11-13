@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {TextField,Button, Alert} from '@mui/material';
+import {TextField,Button, Alert,Typography} from '@mui/material';
 
 
 const MakeAdmin = () => {
@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
     const handleMakeAdmin = e => {
         const user = {email}
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://pacific-harbor-22675.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type':'application/json'
@@ -28,8 +28,10 @@ const MakeAdmin = () => {
         e.preventDefault();
     }
     return (
-        <div>
-            <h2>Make admin</h2>
+        <>
+                <Typography sx={{my:3,color: 'primary.main'}} variant="h5">
+                    MAKE A AN ADMIN
+                </Typography>
             <form onSubmit={handleMakeAdmin}>
                 <TextField
                     sx={{width:'50%'}}
@@ -40,7 +42,7 @@ const MakeAdmin = () => {
                 <Button type="submit" variant="outlined">Make Admin</Button>
             </form>
             {adminSuccess && <Alert severity="success">Make Admin Successfully !!!</Alert>}
-        </div>
+        </>
     );
 };
 

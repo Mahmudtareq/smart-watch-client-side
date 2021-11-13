@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Typography } from '@mui/material';
+import { Button,TextField, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,74 +8,72 @@ import Icon from '@mui/material/Icon';
 
 const Footer = () => {
     return (
-        <Container  sx={{ my: 5, p: 4 }}>
-            <Box sx={{ flexGrow: 1 }}>
+        <>
+        <Box sx={{ flexGrow: 1, my: 5, p: 4}}>
                 <Grid container spacing={2}>
                     <Grid item xs={6} md={3}>
-                        <Typography sx={{ textAlign: 'left', mt: 7 }} variant="body2" gutterBottom component="div">
-                            Emergency Dental Care
+                        <Typography sx={{bgcolor:'primary.main',p:1}} variant="h5" gutterBottom component="div">
+                            CONFIDENT COUNT
                         </Typography>
-                        <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Check Up
+                        <Typography sx={{my:2}} variant="h6">
+                            Social Media Connect
                         </Typography>
-                        <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Treatment of Personal Disease
-                        </Typography>
+                        <Typography sx={{ textAlign: 'center', mt: 3 }}>
+                            <Icon baseClassName="fas" className="fa-plus-circle" color="primary" sx={{ fontSize: 30, p: 1 }}><FontAwesomeIcon icon={faGoogle} /></Icon>
+                            <Icon baseClassName="fas" className="fa-plus-circle" color="primary" sx={{ fontSize: 30, p: 1 }}><FontAwesomeIcon icon={faFacebookF} /></Icon>
+                            <Icon baseClassName="fas" className="fa-plus-circle" color="primary" sx={{ fontSize: 30, p: 1 }}><FontAwesomeIcon icon={faGithub} /></Icon>
 
-                        <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Tooth Extraction
                         </Typography>
-
-                        <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Emergency Dental Care
+                        <Typography sx={{ my: 2 }} variant="h6">
+                            <Button variant="outlined">+880123456789</Button>
                         </Typography>
 
                     </Grid>
                     <Grid item xs={6} md={3}>
                         <Typography sx={{ textAlign: 'left', color: 'info.main' }} variant="h6" gutterBottom component="div">
-                            Services
+                            Quick Shop
                         </Typography>
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Emergency Dental Care
+                            Pagination
                         </Typography>
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Check Up
+                            Contact
                         </Typography>
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Treatment of Personal Disease
+                            Accessories
                         </Typography>
 
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Tooth Extraction
+                            Home Page
                         </Typography>
 
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Emergency Dental Care
+                            OUR MISSION
                         </Typography>
-
-
-
+                        <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
+                            OUR HISTORY
+                        </Typography>
                     </Grid>
                     <Grid item xs={6} md={3}>
                         <Typography sx={{ textAlign: 'left', color: 'info.main' }} variant="h6" gutterBottom component="div">
-                            Oral Health
+                            Customer Care
                         </Typography>
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Emergency Dental Care
+                            About Us
                         </Typography>
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Check Up
+                            Privacy Policy
                         </Typography>
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Treatment of Personal Disease
-                        </Typography>
-
-                        <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Tooth Extraction
+                            Terms & Conditions
                         </Typography>
 
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            Emergency Dental Care
+                            Products Return
+                        </Typography>
+
+                        <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
+                            Wholesale Policy
                         </Typography>
 
 
@@ -84,33 +82,28 @@ const Footer = () => {
                         <Typography sx={{ textAlign: 'left', color: 'info.main' }} variant="h6" gutterBottom component="div">
                             Our Address
                         </Typography>
+                        <Typography sx={{ textAlign: 'left',color:'primary.main' ,my:2}} variant="body1" gutterBottom component="div">
+                             Mirpur , Dhaka , Bangladesh
+                        </Typography>
+
+                        <Typography sx={{textAlign:'left',my:2}} variant="body1">
+                            Subscribe our newsletter and get
+                            discount 30% off
+                            </Typography>
                         <Typography sx={{ textAlign: 'left' }} variant="body2" gutterBottom component="div">
-                            New York - 101010 Hudson <br />
-                            Yards
-                        </Typography>
-                        <Typography sx={{ textAlign: 'left', mt: 3 }}>
-                            <Icon baseClassName="fas" className="fa-plus-circle" color="primary" sx={{ fontSize: 30, p: 1 }}><FontAwesomeIcon icon={faGoogle} /></Icon>
-                            <Icon baseClassName="fas" className="fa-plus-circle" color="primary" sx={{ fontSize: 30, p: 1 }}><FontAwesomeIcon icon={faFacebookF} /></Icon>
-                            <Icon baseClassName="fas" className="fa-plus-circle" color="primary" sx={{ fontSize: 30, p: 1 }}><FontAwesomeIcon icon={faGithub} /></Icon>
-
+                            <TextField
+                                id="outlined-basic"
+                                label="Your Email Address"
+                                variant="outlined" />
                         </Typography>
 
-
-                        <Typography sx={{ textAlign: 'left', mt: 6 }} variant="body2" gutterBottom component="div">
-                            Call Now
+                        <Typography sx={{ textAlign: 'left',my:1 }}>
+                            <Button variant="contained">Subscribe</Button>
                         </Typography>
-
-                        <Typography sx={{ textAlign: 'left' }}>
-                            <Button variant="contained">+021457845</Button>
-                        </Typography>
-
-
-
                     </Grid>
                 </Grid>
             </Box>
-
-        </Container>
+            </>
     );
 };
 

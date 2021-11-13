@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const OurProduct = ({product}) => {
-    console.log(product)
+    // console.log(product)
     const { name, img, price, description ,_id} = product;
     return (
         <Grid Grid item xs={12} md={4} >

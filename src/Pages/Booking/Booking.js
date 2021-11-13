@@ -21,11 +21,11 @@ const Booking = () => {
     const handleBookingOpen = () => setBookingOpen(true);
     const handleBookingClose = () => setBookingOpen(false);
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://pacific-harbor-22675.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProducts(data));
         
-    }, [])
+    }, [productId])
 
     return (
         <>
@@ -34,7 +34,6 @@ const Booking = () => {
                     <CardMedia
                         component="img"
                         height="400"
-                         
                         image={slider2}
                         alt="Paella dish"
                     />

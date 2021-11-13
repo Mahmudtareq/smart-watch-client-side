@@ -15,12 +15,12 @@ const MyOrder = () => {
     // const { name } = product;
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`
+        const url = `https://pacific-harbor-22675.herokuapp.com/orders?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data));
         
-    },[])
+    }, [user.email])
     return (
         <>
             <Typography sx={{mt:5,color:"info.main"}} variant="h5">

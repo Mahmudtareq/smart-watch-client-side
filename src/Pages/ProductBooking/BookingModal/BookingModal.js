@@ -43,7 +43,7 @@ const BookingModal = ({ openBooking, handleBookingClose, products, setOrderPlace
         }
         // console.log(order);
         // send data to the server
-        fetch('http://localhost:5000/orders',{
+        fetch('https://pacific-harbor-22675.herokuapp.com/orders',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

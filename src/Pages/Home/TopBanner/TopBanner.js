@@ -7,8 +7,6 @@ const TopBanner = () => {
     const items = [
         {
             img:"https://i.ibb.co/mXQ6VGk/slide2.jpg"
-            
-            
         },
         {
             img:"https://i.ibb.co/nBCQz9V/slide1.png"
@@ -21,16 +19,13 @@ const TopBanner = () => {
         },
     ]
     return (
-        
         <Carousel>
-           
             {
                 items.map(item => <Banner
                     item={item}
                 
                 ></Banner>)
             }
-           
             </Carousel>
     );
 };
