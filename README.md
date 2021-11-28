@@ -6,9 +6,9 @@ This project Clint side GitHub Link [Create React App](https://github.com/progra
 See Live Project Link [deployment](https://smart-watches-8176d.web.app/) for more information
 
 ## `About This Project`
-* It is smart  watch  Related project
-* You can see lot of products here 
-* All Categories product are Available
+*  It is a product selling website, For a new user  need to create an account, he can order a product, he can see his order in the dashboard 
+* The review section is available for users, he can add product review after adding a new review it is shown on the home page 
+* An admin can see all user orders, admin can add a new product,  remove a product and make an admin
 # Technology Used in this project
 * React Js
 * CSS
