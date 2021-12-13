@@ -7,10 +7,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import {Paper,Container,Button, Typography} from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 
-const MyOrder = () => {
+const MyOrder = ({handleDelete}) => {
     const { user } = useAuth();
     // const { name } = product;
     const [orders, setOrders] = useState([]);
@@ -40,8 +40,9 @@ const MyOrder = () => {
                             <TableCell align="right">Price</TableCell>
                             <TableCell align="right">Quantity</TableCell>
                             <TableCell align="right">User Name</TableCell>
-                            <TableCell align="right">Phone Number</TableCell>
+                            <TableCell align="right">Phone</TableCell>
                             <TableCell align="right">Delivery Address</TableCell>
+                            <TableCell align="right">Action</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -56,8 +57,15 @@ const MyOrder = () => {
                                 <TableCell align="right">{row.ProductPrice}</TableCell>
                                 <TableCell align="right">{row.quantity}</TableCell>
                                 <TableCell align="right">{row.userName}</TableCell>
-                                <TableCell align="right">{row.phone}</TableCell>
+                                <TableCell align="right">{row.phone}
+                                </TableCell>
                                 <TableCell align="right">{row.address}</TableCell>
+                                <TableCell align="right">{row.payment ?
+                                    'Paid' :
+                                    <Link  to={`/dashboard/payMent/${row._id}`}><Button variant="outlined">Pay</Button></Link>
+                                }
+
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

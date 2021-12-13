@@ -21,8 +21,8 @@ const style = {
 
 const BookingModal = ({ openBooking, handleBookingClose, products, setOrderPlaceSuccess }) => {
     const { name ,price} = products;
-    const { user, } = useAuth();
-    const orderInfo = {userName:user.displayName,email:user.email,quantity:'',phone:'',address:''};
+    const { user} = useAuth();
+    const orderInfo = {userName:user.displayName,email:user.email, products:user.price,quantity:'',phone:'',address:''};
     const [bookingInfo, setBookingInfo] = useState(orderInfo);
 
      const handleOnBlur = e =>{
@@ -93,6 +93,13 @@ const BookingModal = ({ openBooking, handleBookingClose, products, setOrderPlace
                             size="small"
                             name="email"
                             defaultValue={user.email}
+                        />
+                        <TextField
+                            sx={{ width: '80%', m: 1 }}
+                            id="outlined-size-small"
+                            size="small"
+                            name="price"
+                            defaultValue={products.price}
                         />
                         <TextField
                             sx={{ width: '80%', m: 1 }}

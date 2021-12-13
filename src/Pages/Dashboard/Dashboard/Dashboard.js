@@ -161,7 +161,7 @@ function Dashboard(props) {
           <Route path={`${path}/reviews`}>
          <Reviews></Reviews>
           </Route>
-          <Route path={`${path}/payMent`}>
+          <Route path={`${path}/payMent/:orderId`}>
           <PayMent></PayMent>
           </Route>
           <Route path={`${path}/addProducts`}>
