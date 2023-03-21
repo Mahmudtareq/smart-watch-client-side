@@ -21,7 +21,7 @@ const Booking = () => {
     const handleBookingOpen = () => setBookingOpen(true);
     const handleBookingClose = () => setBookingOpen(false);
     useEffect(() => {
-        fetch(`https://pacific-harbor-22675.herokuapp.com/products/${productId}`)
+        fetch(`http://localhost:5000/products/${productId}`)
             .then(res => res.json())
             .then(data => setProducts(data));
         

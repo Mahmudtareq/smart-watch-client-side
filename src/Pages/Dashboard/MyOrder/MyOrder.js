@@ -15,7 +15,7 @@ const MyOrder = ({handleDelete}) => {
     // const { name } = product;
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        const url = `https://pacific-harbor-22675.herokuapp.com/orders?email=${user.email}`
+        const url = `http://localhost:5000/orders?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data));

@@ -170,17 +170,16 @@ const Navigation = () => {
                
                 </Toolbar>
             </AppBar>
-            </Box>
-    <div>
-      
-        <React.Fragment >
-          <Drawer
-            open={state}
-              onClose={() => setState(false)}
-            >
-              {list}
-          </Drawer>
-        </React.Fragment>
+         </Box>
+      <div>
+          <React.Fragment >
+            <Drawer
+              open={state}
+                onClose={() => setState(false)}
+              >
+                {list}
+            </Drawer>
+          </React.Fragment>
         </div>
       </>
 

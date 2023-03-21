@@ -1,4 +1,13 @@
-<Box className={navItemContainer}>
+import { Box, Button } from '@mui/material'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import useAuth from '../../../hooks/useAuth'
+
+const ManageAllOrders = () => {
+    const {user,logOut} = useAuth()
+  return (
+    // <Box className={navItemContainer}>
+    <Box className="">
     <NavLink style={{ textDecoration: "none", color: 'white' }} to="/home">
         <Button color="inherit">Home</Button>
 
@@ -26,3 +35,10 @@
             </NavLink>
     }
 </Box>
+  )
+}
+
+export default ManageAllOrders
+
+
+

@@ -5,14 +5,14 @@ import ManageProducts from '../ManageProducts/ManageProducts';
 const ManageProduct = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://pacific-harbor-22675.herokuapp.com/products')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setProducts(data));
 
     }, [])
 
     const handleDelete = id => {
-        const url = `https://pacific-harbor-22675.herokuapp.com/products/${id}`;
+        const url = `http://localhost:5000/products/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

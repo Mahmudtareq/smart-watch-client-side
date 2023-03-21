@@ -98,7 +98,7 @@ const useFirebase = () => {
     // send data to server
     const userSave = (email, displayName,method) => {
         const user = { email, displayName };
-        fetch('https://pacific-harbor-22675.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: method,
             headers: {
                 'content-type' : 'application/json'
@@ -109,7 +109,7 @@ const useFirebase = () => {
         })
     }
     useEffect(() => {
-        fetch(`https://pacific-harbor-22675.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin));
 
